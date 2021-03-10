@@ -14,4 +14,14 @@ public class SearchTests {
 
         $("#search-result").shouldHave(text("selenide.org"));
     }
+
+
+    @Test
+    void pixelscanConsistencyTest() {
+        open("https://pixelscan.net");
+
+        $("#consistency").shouldHave(text("inconsistent"));
+
+
+    }
 }
