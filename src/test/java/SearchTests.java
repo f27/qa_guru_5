@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -8,20 +9,13 @@ public class SearchTests {
 
     @Test
     void selenideSearchTest() {
-        open("https://www.ya.ru/");
+        open("https://www.google.ru/");
 
-        $("#text").setValue("Selenide").pressEnter();
+        $(byName("q")).setValue("Selenide").pressEnter();
 
-        $("#search-result").shouldHave(text("selenide.org"));
+        $("#search").shouldHave(text("selenide.org"));
     }
 
 
-    @Test
-    void pixelscanConsistencyTest() {
-        open("https://pixelscan.net");
 
-        $("#consistency").shouldHave(text("inconsistent"));
-
-
-    }
 }
