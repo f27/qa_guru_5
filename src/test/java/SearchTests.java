@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class SearchTests {
     @Test
     void selenideSearchTest() {
-        open("https://www.google.ru");
+        open("https://www.google.com");
 
         $(byName("q")).setValue("Selenide").pressEnter();
 
